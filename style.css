@@ -1,0 +1,36 @@
+.TimelineBar{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    text-align: center;
+}
+
+.TimelineBar li{
+    display: inline;
+    background-color: brown;
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: 20px;
+}
+.TimelineBar i{
+    background-color: brown;
+    border-radius: 5px;
+    padding: 10px;
+}
+.active{
+    background-color: azure !important;
+}
+.active i{
+    background-color: azure !important;
+}
+.TimelineBar ul{
+    padding:0px;
+
+}
+
+
+.Bar{
+    margin-top: 20px;
+    display: inline-block;
+    text-align: left;
+}

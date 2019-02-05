@@ -1,0 +1,1 @@
+Slideshow that takes both pictures and videos aswell as having a navigation bar. Small project for a friend. 

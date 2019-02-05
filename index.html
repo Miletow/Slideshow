@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div style="width: 500px;" id="element">
+        
+      <img class="mySlides" style="height: 80%; width: 100%; margin-top:30px;" src="poiana.brasov_karta.skidbackar.stor.jpg" alt="">
+      <video class="mySlides" muted="muted" style="height: 80%; width: 100%; margin-top:30px;" id="videoPlayer" src="652333414.mp4" autoplay autobuffer controls></video>
+      <video class="mySlides" style="height: 80%; width: 100%; margin-top:30px;" id="videoPlayer" src="videoplayback.webm" autoplay autobuffer controls></video>
+      <div class="TimelineBar">
+        <div class="Bar">
+        <ul>
+            <li class="active">Video</li>
+            <li><i class="fa fa-circle-o"></i></li>
+            <li>Video</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <a href="#" id="fullscreen">Fullscreen</a>
+
+      <!-- SCRIPTS -->
+      <!-- <script type="text/javascript">
+      let counter = 1;
+        var nextVideo = "652333414.mp4";
+        var videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.onended = function(){
+            videoPlayer.src = nextVideo;
+            const navbar = Array.from(document.querySelectorAll('.Bar>ul>li'));
+            console.log('Get first: ', navbar[1].textContent);
+
+        for (const li of document.querySelectorAll('.Bar>ul>li')) {
+            console.log(li.classList.remove("active"));
+        }
+          navbar[counter].classList.add("active");
+          counter++;
+        
+        if(counter == 3){
+          counter = 0;
+        }
+        }
+        </script> -->
+        <script src="fullscreen.js" ></script>
+
+        <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              
+            const navbar = Array.from(document.querySelectorAll('.Bar>ul>li'));
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              
+              slides[slideIndex-1].style.display = "block";
+              toggleControls(slides[slideIndex-1]);
+              for (const li of document.querySelectorAll('.Bar>ul>li')) {
+            console.log(li.classList.remove("active"));
+        }
+          navbar[slideIndex-1].classList.add("active");
+
+              if(slides[slideIndex-1].nodeName == "VIDEO"){
+               // Show loading animation.
+                  
+                slides[slideIndex-1].play();
+              slides[slideIndex-1].onended = function(){
+                showSlides();
+              }
+              }else{
+              setTimeout(showSlides, 7000); // Change image every 2 seconds
+              }
+            }
+
+            function toggleControls(video) {
+  if (video.hasAttribute("controls")) {
+     video.removeAttribute("controls")   
+  } else {
+     video.setAttribute("controls","controls")   
+  }
+}
+            </script>
+</body>
+</html>
