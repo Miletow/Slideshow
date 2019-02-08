@@ -8,23 +8,76 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <div style="width: 500px;" id="element">
+<body  onload="startTime()">
+    <script>
+        var TIMER = 500; //Seconds
+
+        function startTime() {
+          startTime2();
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+         "Time:  " + h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 1000);
+          
+        }
+        function startTime2() {
+          var h = Math.floor(TIMER/(60*60)) ;
+          var m = Math.floor((TIMER % (60*60))/60);
+          var s = Math.floor(TIMER % 60);
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt2').innerHTML =
+         "Left:  " + h + ":" + m + ":" + s;
+          TIMER-= 1;
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+        </head>
         
-      <img class="mySlides" style="height: 80%; width: 100%; margin-top:30px;" src="poiana.brasov_karta.skidbackar.stor.jpg" alt="">
-      <video class="mySlides" muted="muted" style="height: 80%; width: 100%; margin-top:30px;" id="videoPlayer" src="652333414.mp4" autoplay autobuffer controls></video>
-      <video class="mySlides" style="height: 80%; width: 100%; margin-top:30px;" id="videoPlayer" src="videoplayback.webm" autoplay autobuffer controls></video>
+      
+      
+        
+    <div  id="element" class="mainDiv">
+      <div class="SizingDiv">
+        <div class="sideBar">
+          <div class="sideAdd">
+            <img src="coke-bottle-ad-in-cape-town-south-africa-D5B3A7.jpg" alt="">
+            <img src="what-is-bitcoin-cryptocurrency-001-1068x601.jpg" alt="">
+            <div class="time" id="txt"></div>
+            <div class="time" id="txt2"></div>
+          </div>
+
+        </div>
+       
+      <img class="mySlides" src="20160204152931_Bildschirmfoto-2016-02-04-um-16.27.52.jpg" alt="">
+      <img class="mySlides" src="poiana.brasov_karta.skidbackar.stor.jpg" alt="">
+      <video class="mySlides" muted="muted" id="videoPlayer" src="Audi+Electric+Car+Commercial+2019.mp4" autoplay autobuffer controls></video>
+      <!-- <video class="mySlides" id="videoPlayer" src="videoplayback.webm" autoplay autobuffer controls></video> -->
+      
+    </div>
       <div class="TimelineBar">
         <div class="Bar">
         <ul>
-            <li class="active">Video</li>
+            
             <li><i class="fa fa-circle-o"></i></li>
-            <li>Video</li>
+            <li><i class="fa fa-circle-o"></i></li>
+            <li><i class="fa fa-video-camera"></i></li>
+            
           </ul>
         </div>
       </div>
+
     </div>
-      <a href="#" id="fullscreen">Fullscreen</a>
+    <a href="#" id="fullscreen">Fullscreen</a>
+      
 
       <!-- SCRIPTS -->
       <!-- <script type="text/javascript">
@@ -47,6 +100,19 @@
         }
         }
         </script> -->
+        <!-- <div  id="container"> -->
+  
+            <!-- Code generated at https://WeatherWidget.io -->  
+            <!-- <a class="weatherwidget-io" href="https://forecast7.com/en/56d6712d86/halmstad/" data-label_1="HALMSTAD" data-label_2="WEATHER" data-theme="original" >HALMSTAD WEATHER</a> -->
+            <!-- <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script> -->
+          <!-- / Code generated at https://WeatherWidget.io --> 
+            
+          <!-- </div> -->
+        
+
+
         <script src="fullscreen.js" ></script>
 
         <script>
@@ -68,6 +134,7 @@
               toggleControls(slides[slideIndex-1]);
               for (const li of document.querySelectorAll('.Bar>ul>li')) {
             console.log(li.classList.remove("active"));
+            
         }
           navbar[slideIndex-1].classList.add("active");
 

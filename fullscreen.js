@@ -4,4 +4,5 @@ var fullscreen = document.getElementById("fullscreen");
 fullscreen.addEventListener('click', function(){
 
     element.requestFullscreen();
+    
 })
